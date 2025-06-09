@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Shopping list
+    </title>
+<head>
+<!-- Link Your CSS If You Want -->
+<!-- <link rel="stylesheet" href="Stylesheet.css"> -->
+<script
+src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js">
+</script>
+</head>
+<body ng-app ng-init="items=['Item 1', 'Item 2', 'Item 3']; newItem=''">
+   <h1>Shopping List</h1>
+    <h2> list of item</h2>
+<input ng-model="newItem">
+<button ng-click="items.push(newItem); newItem = '';">Add</button>
+<ol>
+<li ng-repeat="item in items">
+{{ item }}
+<button ng-click="items.splice($index,1)">Remove</button>
+</li>
+</ol>
+</body>
+</html>
